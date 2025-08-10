@@ -1,0 +1,9 @@
+*.log
+runtime/
+web/assets/*
+!web/assets/.gitkeep
+composer.phar
+vendor/
+.env
+.DS_Store
+Thumbs.db

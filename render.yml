@@ -1,0 +1,35 @@
+web_servers:
+  - type: http
+    name: frontend
+    path: /web
+    index_file: index.php
+
+php_version: 8.3
+
+buildpacks:
+  - heroku/php
+
+env_vars:
+  - name: YII_DEBUG
+    value: "false"
+  - name: YII_ENV
+    value: "prod"
+  - name: COMPOSER_ALLOW_SUPERUSER
+    value: "1"
+
+databases:
+  - name: attain_database
+    type: postgres
+    plan: starter
+
+build_command: |
+  echo "Starting build process..."
+  composer install --no-dev --optimize-autoloader --no-interaction
+  php init.php
+  chmod -R 755 runtime
+  chmod -R 755 web/assets
+  echo "Build completed successfully!"
+
+start_command: |
+  echo "Starting PHP server..."
+  cd web && php -S 0.0.0.0:$PORT

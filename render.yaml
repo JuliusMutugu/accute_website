@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: attain-enterprise-frontend
+    env: php
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php -S 0.0.0.0:$PORT -t web
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: YII_DEBUG
+        value: false
+      - key: YII_ENV
+        value: prod
+      - key: DB_HOST
+        fromDatabase:
+          name: attain-db
+          property: host
+      - key: DB_NAME
+        fromDatabase:
+          name: attain-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: attain-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: attain-db
+          property: password
+  
+  - type: postgres
+    name: attain-db
+    databaseName: attain_es_db
+    user: attain_user

@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
-    && docker-php-ext-install zip pdo pdo_mysql
+    && docker-php-ext-install zip pdo pdo_mysql \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -21,8 +22,10 @@ COPY . .
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Set permissions
-RUN chmod -R 755 runtime web/assets
+# Create necessary directories and set permissions
+RUN mkdir -p runtime/logs runtime/cache web/assets \
+    && chmod -R 755 runtime web/assets \
+    && touch runtime/.gitkeep web/assets/.gitkeep
 
 # Expose port (Render will set this automatically)
 EXPOSE $PORT

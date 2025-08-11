@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+Dockerfile.render
+.vscode
+.env
+runtime/logs/*
+runtime/cache/*
+web/assets/*
+!web/assets/.gitkeep
+vendor/bin
+tests
+docs

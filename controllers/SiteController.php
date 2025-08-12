@@ -108,6 +108,35 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays individual service detail page.
+     *
+     * @param string $slug
+     * @return mixed
+     */
+    public function actionServiceDetail($slug)
+    {
+        $service = Service::find()
+            ->where(['slug' => $slug, 'status' => Service::STATUS_ACTIVE])
+            ->one();
+
+        if (!$service) {
+            throw new \yii\web\NotFoundHttpException('The requested service does not exist.');
+        }
+
+        // Get related services (exclude current service)
+        $relatedServices = Service::find()
+            ->where(['!=', 'slug', $slug])
+            ->andWhere(['status' => Service::STATUS_ACTIVE])
+            ->limit(3)
+            ->all();
+
+        return $this->render('service-detail', [
+            'service' => $service,
+            'relatedServices' => $relatedServices,
+        ]);
+    }
+
+    /**
      * Displays contact page.
      *
      * @return mixed

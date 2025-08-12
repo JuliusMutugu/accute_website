@@ -8,41 +8,41 @@
         padding: 80px 0 30px;
         text-align: center;
     }
-    
+
     .hero-section h1 {
         font-size: 2rem;
     }
-    
+
     .hero-section .lead {
         font-size: 1rem;
     }
-    
+
     .hero-buttons .btn {
         display: block;
         width: 100%;
         margin-bottom: 0.5rem;
     }
-    
+
     .navbar-brand {
         font-size: 1.2rem;
     }
-    
+
     .service-card {
         margin-bottom: 1rem;
     }
-    
+
     .stats-grid .stat-card {
         margin-bottom: 1rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     .feature-item {
         padding: 0.5rem;
     }
-    
+
     #footer .col-lg-4,
     #footer .col-lg-2,
     #footer .col-lg-3 {
@@ -55,11 +55,11 @@
     .hero-section h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-buttons .btn {
         margin-bottom: 0.5rem;
     }
-    
+
     .stats-grid .col-6 {
         margin-bottom: 1rem;
     }
@@ -70,19 +70,19 @@
     .hero-section {
         padding: 90px 0 40px;
     }
-    
+
     .hero-section h1 {
         font-size: 3rem;
     }
-    
+
     .navbar {
         padding: 0.75rem 0;
     }
-    
+
     .service-card {
         margin-bottom: 1.5rem;
     }
-    
+
     .feature-item {
         padding: 0.75rem;
     }
@@ -93,18 +93,18 @@
     .hero-section {
         padding: 120px 0 60px;
     }
-    
+
     .navbar.scrolled {
         padding: 0.5rem 0;
     }
-    
+
     /* Multi-column layouts */
     .service-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
-    
+
     .feature-list .feature-item {
         padding: 1.5rem;
     }
@@ -112,15 +112,16 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
     .container,
     .container-fluid {
         max-width: 1400px;
     }
-    
+
     .hero-section h1 {
         font-size: 3.5rem;
     }
-    
+
     .section-title {
         font-size: 2.5rem;
     }
@@ -131,14 +132,16 @@
     .hero-section {
         padding: 150px 0 80px;
     }
-    
+
     .service-card .card-body {
         padding: 2rem;
     }
 }
 
 /* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
     .hero-image img,
     .service-icon i {
         image-rendering: -webkit-optimize-contrast;
@@ -152,11 +155,11 @@
         padding: 60px 0 30px;
         min-height: auto;
     }
-    
+
     .min-vh-75 {
         min-height: auto;
     }
-    
+
     .hero-scroll {
         display: none;
     }
@@ -164,6 +167,7 @@
 
 /* Print styles */
 @media print {
+
     .navbar,
     .hero-scroll,
     #footer,
@@ -171,22 +175,22 @@
     .social-links {
         display: none !important;
     }
-    
+
     .hero-section {
         background: none !important;
         color: #000 !important;
         padding: 1rem 0;
     }
-    
+
     .card {
         border: 1px solid #000 !important;
         box-shadow: none !important;
     }
-    
+
     .text-white {
         color: #000 !important;
     }
-    
+
     .bg-primary,
     .bg-dark {
         background: #fff !important;
@@ -196,6 +200,7 @@
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -204,14 +209,14 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
+
     .animate-fade-in,
     .animate-fade-in-delay,
     .animate-fade-in-delay-2,
     .animate-slide-in {
         animation: none;
     }
-    
+
     .scroll-down {
         animation: none;
     }
@@ -222,7 +227,7 @@
     .card {
         background-color: rgba(255, 255, 255, 0.95);
     }
-    
+
     .bg-light {
         background-color: #f8f9fa !important;
     }
@@ -230,6 +235,7 @@
 
 /* Focus styles for accessibility */
 @media (prefers-reduced-motion: no-preference) {
+
     .btn:focus,
     .nav-link:focus,
     .form-control:focus {
@@ -247,11 +253,11 @@
 
 /* Grid system enhancements for better mobile experience */
 @media (max-width: 767.98px) {
-    .row > * {
+    .row>* {
         margin-bottom: 1rem;
     }
-    
-    .g-4 > * {
+
+    .g-4>* {
         margin-bottom: 1.5rem;
     }
 }
@@ -262,15 +268,15 @@
         min-height: 44px;
         min-width: 44px;
     }
-    
+
     .nav-link {
         padding: 0.75rem 1rem;
     }
-    
+
     .hover-lift:hover {
         transform: none;
     }
-    
+
     .service-card:hover .service-icon i {
         transform: none;
     }
@@ -284,12 +290,12 @@
         padding: 1rem;
         border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
-    
+
     .navbar-nav .nav-link {
         padding: 0.75rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .navbar-nav .nav-link:last-child {
         border-bottom: none;
     }
@@ -300,15 +306,15 @@
     body {
         font-size: 0.9rem;
     }
-    
+
     .lead {
         font-size: 1rem;
     }
-    
+
     .card-body {
         padding: 1rem;
     }
-    
+
     .section-subtitle {
         font-size: 1rem;
     }
